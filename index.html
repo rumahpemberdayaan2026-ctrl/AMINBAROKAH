@@ -1,0 +1,1048 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>UD AMIN BAROKAH — Kerajinan Batu Alam Klasik Jepara</title>
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Google Fonts: Cinzel & Playfair Display (Klasik Jawa) + Plus Jakarta Sans (Modern) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Playfair+Display:ital,wght@0,500;0,700;1,500&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <!-- Font Awesome untuk Ikon -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            serifJawa: ['"Playfair Display"', 'Georgia', 'serif'],
+            royal: ['"Cinzel"', 'serif'],
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+          },
+          colors: {
+            javaGold: {
+              400: '#E5C158',
+              500: '#D4AF37',
+              600: '#B59224',
+              700: '#8F7117',
+            },
+            teakDark: '#16110C',
+            teakCard: '#211912',
+            creamJawa: '#FAF6F0',
+            stoneSlate: '#4A4E54',
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* Ornamen Pola Kawung Jawa Halus */
+    .bg-kawung-light {
+      background-color: #FAF6F0;
+      background-image: radial-gradient(rgba(181, 146, 36, 0.14) 1.5px, transparent 1.5px),
+                        radial-gradient(rgba(181, 146, 36, 0.14) 1.5px, #FAF6F0 1.5px);
+      background-size: 36px 36px;
+      background-position: 0 0, 18px 18px;
+    }
+    .dark .bg-kawung-dark {
+      background-color: #140F0B;
+      background-image: radial-gradient(rgba(212, 175, 55, 0.1) 1.5px, transparent 1.5px),
+                        radial-gradient(rgba(212, 175, 55, 0.1) 1.5px, #140F0B 1.5px);
+      background-size: 36px 36px;
+      background-position: 0 0, 18px 18px;
+    }
+
+    /* Tekstur Batu Alam Granit/Andesit */
+    .stone-texture {
+      background: radial-gradient(circle at 30% 30%, #7d8287, #484c50 65%, #2c2f33 100%);
+      box-shadow: inset 0 4px 12px rgba(255,255,255,0.25), inset 0 -8px 16px rgba(0,0,0,0.65);
+    }
+
+    /* Animasi Halus */
+    @keyframes floatSlow {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-6px); }
+    }
+    .animate-float {
+      animation: floatSlow 5s ease-in-out infinite;
+    }
+
+    /* Garis Bingkai Ukiran Klasik */
+    .jawa-border {
+      position: relative;
+    }
+    .jawa-border::before {
+      content: '';
+      position: absolute;
+      inset: 6px;
+      border: 1px solid rgba(212, 175, 55, 0.35);
+      border-radius: inherit;
+      pointer-events: none;
+    }
+  </style>
+</head>
+<body class="bg-kawung-light dark:bg-kawung-dark text-stone-800 dark:text-stone-100 font-sans transition-colors duration-300 antialiased selection:bg-javaGold-500 selection:text-stone-950">
+
+  <!-- ==================== NAVBAR ==================== -->
+  <header class="sticky top-0 z-50 backdrop-blur-md bg-[#FAF6F0]/90 dark:bg-[#140F0B]/90 border-b border-amber-700/20 dark:border-javaGold-500/20 transition-colors">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20">
+        <!-- Logo & Brand -->
+        <a href="#beranda" class="flex items-center gap-3 group">
+          <div class="w-11 h-11 rounded-xl bg-gradient-to-br from-emerald-900 to-stone-900 border-2 border-javaGold-500 flex items-center justify-center shadow-md group-hover:scale-105 transition-transform">
+            <!-- Ikon Gunungan / Lesung Emas SVG -->
+            <svg class="w-6 h-6 text-javaGold-400" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 2L4 12h3v8h10v-8h3L12 2zm0 3.2L16.8 11H15v7H9v-7H7.2L12 5.2z"/>
+              <circle cx="12" cy="14" r="2"/>
+            </svg>
+          </div>
+          <div>
+            <span class="block font-royal font-bold text-lg sm:text-xl tracking-wider text-emerald-950 dark:text-javaGold-400">
+              UD AMIN BAROKAH
+            </span>
+            <span class="block text-[11px] uppercase tracking-[0.2em] text-amber-800 dark:text-stone-400" data-i18n="brandSub">
+              Keling • Jepara • Jawa Tengah
+            </span>
+          </div>
+        </a>
+
+        <!-- Menu Desktop -->
+        <nav class="hidden md:flex items-center gap-7 text-sm font-medium">
+          <a href="#beranda" class="hover:text-javaGold-600 dark:hover:text-javaGold-400 transition-colors" data-i18n="navHome">Beranda</a>
+          <a href="#keunggulan" class="hover:text-javaGold-600 dark:hover:text-javaGold-400 transition-colors" data-i18n="navFeatures">Keunggulan</a>
+          <a href="#galeri-video" class="hover:text-javaGold-600 dark:hover:text-javaGold-400 transition-colors" data-i18n="navVideos">Video Showcase</a>
+          <a href="#galeri-poster" class="hover:text-javaGold-600 dark:hover:text-javaGold-400 transition-colors" data-i18n="navPosters">Poster & Katalog</a>
+          <a href="#kontak" class="hover:text-javaGold-600 dark:hover:text-javaGold-400 transition-colors" data-i18n="navContact">Kontak</a>
+        </nav>
+
+        <!-- Kontrol Bahasa (ID/EN) & Tema (Gelap/Terang) -->
+        <div class="flex items-center gap-2 sm:gap-3">
+          <!-- Tombol Ganti Bahasa -->
+          <button id="langToggle" onclick="toggleLanguage()" title="Ganti Bahasa / Switch Language"
+            class="px-3 py-2 rounded-xl border border-amber-700/30 dark:border-javaGold-500/30 bg-white/80 dark:bg-teakCard text-xs font-bold tracking-wider flex items-center gap-1.5 hover:border-javaGold-500 transition-all shadow-sm">
+            <i class="fa-solid fa-globe text-javaGold-600 dark:text-javaGold-400"></i>
+            <span id="langLabel">ID</span>
+          </button>
+
+          <!-- Tombol Ganti Tema Gelap / Terang -->
+          <button id="themeToggle" onclick="toggleTheme()" title="Mode Gelap / Terang"
+            class="w-10 h-10 rounded-xl border border-amber-700/30 dark:border-javaGold-500/30 bg-white/80 dark:bg-teakCard flex items-center justify-center text-amber-800 dark:text-javaGold-400 hover:border-javaGold-500 transition-all shadow-sm">
+            <i id="themeIcon" class="fa-solid fa-moon"></i>
+          </button>
+
+          <!-- Tombol Pesan WA Cepat -->
+          <a href="https://wa.me/628561717276?text=Halo%20UD%20Amin%20Barokah%20(Ibu%20Siti%20Zunaidah),%20saya%20tertarik%20memesan%20produk%20Batu%20Alam." target="_blank"
+            class="hidden sm:inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-gradient-to-r from-emerald-800 to-emerald-950 dark:from-javaGold-500 dark:to-javaGold-600 text-white dark:text-stone-950 font-semibold text-xs tracking-wide shadow-md hover:opacity-95 transition-all">
+            <i class="fa-brands fa-whatsapp text-base"></i>
+            <span data-i18n="navOrder">Pesan WA</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ==================== HERO SECTION ==================== -->
+  <section id="beranda" class="relative pt-10 pb-20 lg:pt-16 lg:pb-28 overflow-hidden">
+    <!-- Dekorasi Cahaya Emas Halus -->
+    <div class="absolute -top-24 -right-24 w-96 h-96 bg-javaGold-500/10 rounded-full blur-3xl pointer-events-none"></div>
+    <div class="absolute bottom-0 -left-24 w-80 h-80 bg-emerald-800/10 rounded-full blur-3xl pointer-events-none"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        <!-- Kolom Teks Kiri -->
+        <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+          <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-amber-900/10 dark:bg-javaGold-500/15 border border-amber-700/30 dark:border-javaGold-500/30 text-amber-900 dark:text-javaGold-400 text-xs font-semibold tracking-widest uppercase">
+            <i class="fa-solid fa-crown"></i>
+            <span data-i18n="heroBadge">Warisan Kriya Batu Alam Jepara</span>
+          </div>
+
+          <h1 class="font-serifJawa text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight text-stone-900 dark:text-white">
+            <span data-i18n="heroTitle1">Keindahan Alami,</span>
+            <span class="block text-transparent bg-clip-text bg-gradient-to-r from-amber-700 via-javaGold-500 to-emerald-800 dark:from-javaGold-400 dark:via-amber-200 dark:to-javaGold-500" data-i18n="heroTitle2">
+              Kuat, Awet & Serbaguna
+            </span>
+          </h1>
+
+          <p class="text-base sm:text-lg text-stone-600 dark:text-stone-300 max-w-2xl mx-auto lg:mx-0 leading-relaxed" data-i18n="heroDesc">
+            Menghadirkan mahakarya <strong>Cobek, Lesung, dan Piring Batu Alam 100% Asli</strong> dari tangan terampil pengrajin Kelet, Keling, Jepara. Memadukan estetika klasik Jawa yang bersahaja dengan ketahanan modern untuk dapur dan sajian kuliner istimewa Anda.
+          </p>
+
+          <!-- Tombol Aksi Utama -->
+          <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-2">
+            <a href="https://wa.me/628561717276?text=Halo%20UD%20Amin%20Barokah,%20saya%20ingin%20konsultasi%20dan%20pesan%20Cobek%20/%20Piring%20Batu%20Alam." target="_blank"
+              class="w-full sm:w-auto px-7 py-4 rounded-2xl bg-gradient-to-r from-emerald-800 to-emerald-950 dark:from-javaGold-500 dark:to-javaGold-600 text-white dark:text-stone-950 font-bold text-sm tracking-wide shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all flex items-center justify-center gap-3">
+              <i class="fa-brands fa-whatsapp text-xl"></i>
+              <span data-i18n="heroCtaWa">Pesan Sekarang via WhatsApp</span>
+            </a>
+
+            <a href="#galeri-video"
+              class="w-full sm:w-auto px-7 py-4 rounded-2xl border-2 border-amber-800/30 dark:border-javaGold-500/40 bg-white/70 dark:bg-teakCard/80 hover:border-javaGold-500 text-stone-800 dark:text-stone-100 font-semibold text-sm tracking-wide transition-all flex items-center justify-center gap-2.5">
+              <i class="fa-solid fa-play-circle text-javaGold-600 dark:text-javaGold-400 text-lg"></i>
+              <span data-i18n="heroCtaVideo">Tonton Video Produk</span>
+            </a>
+          </div>
+
+          <!-- Statistik / Kepercayaan Singkat -->
+          <div class="grid grid-cols-3 gap-4 pt-6 border-t border-amber-900/15 dark:border-javaGold-500/15 max-w-lg mx-auto lg:mx-0">
+            <div>
+              <p class="font-royal text-2xl font-bold text-emerald-900 dark:text-javaGold-400">100%</p>
+              <p class="text-xs text-stone-600 dark:text-stone-400" data-i18n="stat1">Batu Alam Asli</p>
+            </div>
+            <div>
+              <p class="font-royal text-2xl font-bold text-emerald-900 dark:text-javaGold-400">Grosir</p>
+              <p class="text-xs text-stone-600 dark:text-stone-400" data-i18n="stat2">& Eceran Siap Kirim</p>
+            </div>
+            <div>
+              <p class="font-royal text-2xl font-bold text-emerald-900 dark:text-javaGold-400">Jepara</p>
+              <p class="text-xs text-stone-600 dark:text-stone-400" data-i18n="stat3">Kriya Asli Keling</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Kolom Kartu Visual Hero Kanan (Representasi Lencana & Produk Unggulan) -->
+        <div class="lg:col-span-5">
+          <div class="jawa-border rounded-3xl bg-gradient-to-b from-emerald-950 via-stone-900 to-[#16110C] p-6 sm:p-8 text-center shadow-2xl border-2 border-javaGold-500/60 animate-float">
+            <div class="inline-block px-4 py-1 rounded-full bg-javaGold-500/20 border border-javaGold-400/40 text-javaGold-300 text-xs font-semibold tracking-widest uppercase mb-4">
+              <i class="fa-solid fa-award mr-1"></i> <span data-i18n="badgeTrusted">Produk Berkualitas Terpercaya</span>
+            </div>
+
+            <!-- Ilustrasi SVG Piring & Cobek Batu Alam Granit Klasik -->
+            <div class="relative mx-auto w-56 h-56 sm:w-64 sm:h-64 my-2 flex items-center justify-center">
+              <div class="absolute inset-0 rounded-full bg-javaGold-500/15 blur-xl"></div>
+              <svg viewBox="0 0 240 240" class="w-full h-full drop-shadow-2xl">
+                <defs>
+                  <radialGradient id="graniteGrad" cx="35%" cy="30%" r="70%">
+                    <stop offset="0%" stop-color="#9ca3af"/>
+                    <stop offset="55%" stop-color="#52525b"/>
+                    <stop offset="100%" stop-color="#27272a"/>
+                  </radialGradient>
+                  <radialGradient id="innerBowl" cx="50%" cy="55%" r="60%">
+                    <stop offset="0%" stop-color="#3f3f46"/>
+                    <stop offset="80%" stop-color="#71717a"/>
+                    <stop offset="100%" stop-color="#a1a1aa"/>
+                  </radialGradient>
+                </defs>
+                <!-- Tumpukan Piring Batu Bawah -->
+                <ellipse cx="120" cy="185" rx="82" ry="22" fill="#3f3f46" stroke="#d4af37" stroke-width="1.5"/>
+                <ellipse cx="120" cy="172" rx="85" ry="23" fill="#52525b" stroke="#d4af37" stroke-width="1.5"/>
+                <ellipse cx="120" cy="159" rx="88" ry="24" fill="#71717a" stroke="#d4af37" stroke-width="1.5"/>
+                <!-- Piring / Cobek Utama -->
+                <circle cx="120" cy="105" r="72" fill="url(#graniteGrad)" stroke="#E5C158" stroke-width="3"/>
+                <circle cx="120" cy="105" r="56" fill="url(#innerBowl)"/>
+                <!-- Bintik Batu Alam -->
+                <g fill="#e4e4e7" opacity="0.45">
+                  <circle cx="95" cy="85" r="2"/><circle cx="135" cy="90" r="2.5"/><circle cx="115" cy="125" r="2"/>
+                  <circle cx="145" cy="115" r="1.8"/><circle cx="88" cy="112" r="2.2"/><circle cx="122" cy="78" r="1.5"/>
+                  <circle cx="105" cy="102" r="2"/><circle cx="132" cy="132" r="2"/>
+                </g>
+                <!-- Ulekan Batu -->
+                <rect x="132" y="52" width="22" height="74" rx="11" transform="rotate(32 132 52)" fill="url(#graniteGrad)" stroke="#E5C158" stroke-width="2"/>
+              </svg>
+            </div>
+
+            <h2 class="font-royal text-2xl sm:text-3xl font-bold text-javaGold-400 tracking-wide">
+              UD AMIN BAROKAH
+            </h2>
+            <p class="text-amber-100/90 font-serifJawa italic text-base mt-1">
+              "Pilihannya Tepat, Kepuasannya Pasti!"
+            </p>
+
+            <div class="mt-5 pt-4 border-t border-javaGold-500/25 flex flex-col gap-1.5 text-xs text-stone-300">
+              <p class="font-semibold text-javaGold-300 text-sm">
+                <i class="fa-solid fa-user-tie mr-1.5"></i> Siti Zunaidah
+              </p>
+              <p>
+                <i class="fa-solid fa-location-dot text-red-400 mr-1.5"></i> Kelet RT 26 RW 04, Keling, Jepara
+              </p>
+              <p class="text-emerald-400 font-bold text-sm mt-1">
+                <i class="fa-brands fa-whatsapp mr-1"></i> +62 856-1717-276
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== KEUNGGULAN PRODUK ==================== -->
+  <section id="keunggulan" class="py-16 sm:py-20 bg-white/60 dark:bg-teakCard/60 border-y border-amber-800/15 dark:border-javaGold-500/15">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-14">
+        <span class="text-xs font-bold uppercase tracking-[0.25em] text-amber-800 dark:text-javaGold-400" data-i18n="featSub">Mengapa Memilih Kami</span>
+        <h2 class="font-serifJawa text-3xl sm:text-4xl font-bold mt-2 text-stone-900 dark:text-white" data-i18n="featTitle">
+          Pilihan Tepat untuk Kebutuhan Kuliner & Dapur Anda
+        </h2>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <!-- Card 1 -->
+        <div class="p-6 rounded-2xl bg-creamJawa dark:bg-teakDark border border-amber-800/20 dark:border-javaGold-500/25 shadow-sm hover:shadow-md transition-all">
+          <div class="w-12 h-12 rounded-xl bg-emerald-900/10 dark:bg-javaGold-500/15 text-emerald-800 dark:text-javaGold-400 flex items-center justify-center text-xl mb-4">
+            <i class="fa-solid fa-gem"></i>
+          </div>
+          <h3 class="font-serifJawa font-bold text-lg mb-2 text-stone-900 dark:text-javaGold-300" data-i18n="f1Title">100% Batu Alam Asli</h3>
+          <p class="text-sm text-stone-600 dark:text-stone-400 leading-relaxed" data-i18n="f1Desc">
+            Dipahat dari batu alam pilihan tanpa campuran semen atau pewarna kimia, aman untuk mengulek sambal dan menyajikan makanan panas.
+          </p>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="p-6 rounded-2xl bg-creamJawa dark:bg-teakDark border border-amber-800/20 dark:border-javaGold-500/25 shadow-sm hover:shadow-md transition-all">
+          <div class="w-12 h-12 rounded-xl bg-emerald-900/10 dark:bg-javaGold-500/15 text-emerald-800 dark:text-javaGold-400 flex items-center justify-center text-xl mb-4">
+            <i class="fa-solid fa-shield-halved"></i>
+          </div>
+          <h3 class="font-serifJawa font-bold text-lg mb-2 text-stone-900 dark:text-javaGold-300" data-i18n="f2Title">Kuat & Tahan Lama</h3>
+          <p class="text-sm text-stone-600 dark:text-stone-400 leading-relaxed" data-i18n="f2Desc">
+            Struktur batu padat yang kokoh, tidak mudah pecah maupun terkikis saat digunakan mengulek bumbu setiap hari.
+          </p>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="p-6 rounded-2xl bg-creamJawa dark:bg-teakDark border border-amber-800/20 dark:border-javaGold-500/25 shadow-sm hover:shadow-md transition-all">
+          <div class="w-12 h-12 rounded-xl bg-emerald-900/10 dark:bg-javaGold-500/15 text-emerald-800 dark:text-javaGold-400 flex items-center justify-center text-xl mb-4">
+            <i class="fa-solid fa-utensils"></i>
+          </div>
+          <h3 class="font-serifJawa font-bold text-lg mb-2 text-stone-900 dark:text-javaGold-300" data-i18n="f3Title">Serbaguna & Estetik</h3>
+          <p class="text-sm text-stone-600 dark:text-stone-400 leading-relaxed" data-i18n="f3Desc">
+            Cocok untuk sambal penyet, nasi goreng, sate, hingga salad modern. Menambah kesan mewah alami di meja makan maupun restoran.
+          </p>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="p-6 rounded-2xl bg-creamJawa dark:bg-teakDark border border-amber-800/20 dark:border-javaGold-500/25 shadow-sm hover:shadow-md transition-all">
+          <div class="w-12 h-12 rounded-xl bg-emerald-900/10 dark:bg-javaGold-500/15 text-emerald-800 dark:text-javaGold-400 flex items-center justify-center text-xl mb-4">
+            <i class="fa-solid fa-hand-sparkles"></i>
+          </div>
+          <h3 class="font-serifJawa font-bold text-lg mb-2 text-stone-900 dark:text-javaGold-300" data-i18n="f4Title">Halus & Mudah Dicuci</h3>
+          <p class="text-sm text-stone-600 dark:text-stone-400 leading-relaxed" data-i18n="f4Desc">
+            Finishing permukaan halus dengan pori-pori rapat sehingga sisa bumbu tidak mudah menempel dan sangat praktis dibersihkan.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== GALERI VIDEO PROMOSI (4 VIDEO DARI USER) ==================== -->
+  <section id="galeri-video" class="py-16 sm:py-24">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
+        <div>
+          <span class="text-xs font-bold uppercase tracking-[0.25em] text-amber-800 dark:text-javaGold-400" data-i18n="vidSub">Dokumentasi & Demo Produk</span>
+          <h2 class="font-serifJawa text-3xl sm:text-4xl font-bold mt-2 text-stone-900 dark:text-white" data-i18n="vidTitle">
+            Galeri Video Promosi UD Amin Barokah
+          </h2>
+        </div>
+        <p class="text-sm text-stone-600 dark:text-stone-400 max-w-md" data-i18n="vidNote">
+          Klik pada kartu video untuk memutar pratinjau cerita & keunggulan Cobek dan Piring Batu Alam kami. Anda juga dapat mengunggah file video MP4 Anda sendiri untuk diputar langsung.
+        </p>
+      </div>
+
+      <!-- Grid 4 Video Showcase -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6" id="videoGrid">
+        <!-- Diisi oleh JavaScript agar mendukung dwibahasa & pemutar interaktif -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== GALERI POSTER & KATALOG (4 POSTER DARI USER) ==================== -->
+  <section id="galeri-poster" class="py-16 sm:py-24 bg-white/60 dark:bg-teakCard/60 border-y border-amber-800/15 dark:border-javaGold-500/15">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-14">
+        <span class="text-xs font-bold uppercase tracking-[0.25em] text-amber-800 dark:text-javaGold-400" data-i18n="posSub">Katalog Visual & Brosur</span>
+        <h2 class="font-serifJawa text-3xl sm:text-4xl font-bold mt-2 text-stone-900 dark:text-white" data-i18n="posTitle">
+          Poster Resmi & Produk Unggulan
+        </h2>
+        <p class="text-sm text-stone-600 dark:text-stone-400 mt-3" data-i18n="posDesc">
+          Pilih paket produk batu alam sesuai kebutuhan rumah tangga, warung makan, kafe, maupun pesanan grosir. Klik poster untuk memperbesar detail atau memesan langsung.
+        </p>
+      </div>
+
+      <!-- Grid 4 Poster Katalog -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6" id="posterGrid">
+        <!-- Diisi oleh JavaScript -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== FORM PEMESANAN & KONTAK ==================== -->
+  <section id="kontak" class="py-16 sm:py-24">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="jawa-border rounded-3xl bg-gradient-to-br from-emerald-950 via-stone-900 to-[#16110C] text-white p-8 sm:p-12 shadow-2xl border border-javaGold-500/40">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+          <!-- Info Kontak -->
+          <div class="lg:col-span-6 space-y-6">
+            <span class="inline-block px-3 py-1 rounded-full bg-javaGold-500/20 text-javaGold-300 text-xs font-bold uppercase tracking-widest" data-i18n="contactBadge">
+              Layanan Grosir & Eceran
+            </span>
+            <h2 class="font-serifJawa text-3xl sm:text-4xl font-bold text-javaGold-400" data-i18n="contactTitle">
+              Siap Kirim ke Seluruh Indonesia
+            </h2>
+            <p class="text-stone-300 text-sm sm:text-base leading-relaxed" data-i18n="contactDesc">
+              Dapatkan harga pengrajin langsung dari pusat kerajinan batu alam Jepara. Pengemasan aman (packing kayu/kardus tebal) menjamin barang sampai dengan utuh.
+            </p>
+
+            <div class="space-y-4 pt-2">
+              <div class="flex items-start gap-4">
+                <div class="w-10 h-10 rounded-xl bg-javaGold-500/20 text-javaGold-400 flex items-center justify-center shrink-0 mt-0.5">
+                  <i class="fa-solid fa-store"></i>
+                </div>
+                <div>
+                  <h4 class="font-bold text-white">UD AMIN BAROKAH</h4>
+                  <p class="text-xs text-stone-400" data-i18n="ownerLabel">Pengelola: Ibu Siti Zunaidah</p>
+                </div>
+              </div>
+
+              <div class="flex items-start gap-4">
+                <div class="w-10 h-10 rounded-xl bg-javaGold-500/20 text-javaGold-400 flex items-center justify-center shrink-0 mt-0.5">
+                  <i class="fa-solid fa-location-dot"></i>
+                </div>
+                <div>
+                  <h4 class="font-bold text-white" data-i18n="addrTitle">Alamat Workshop</h4>
+                  <p class="text-sm text-stone-300">Kelet RT 26 RW 04, Kec. Keling, Kab. Jepara, Jawa Tengah</p>
+                </div>
+              </div>
+
+              <div class="flex items-start gap-4">
+                <div class="w-10 h-10 rounded-xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center shrink-0 mt-0.5">
+                  <i class="fa-brands fa-whatsapp text-lg"></i>
+                </div>
+                <div>
+                  <h4 class="font-bold text-white">WhatsApp / Telepon</h4>
+                  <p class="text-sm text-emerald-300 font-semibold">+62 856-1717-276</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Form Pesan Cepat ke WhatsApp -->
+          <div class="lg:col-span-6 bg-white/10 backdrop-blur-md rounded-2xl p-6 sm:p-8 border border-javaGold-500/30">
+            <h3 class="font-serifJawa text-xl font-bold text-white mb-4" data-i18n="formTitle">
+              Formulir Pemesanan Cepat
+            </h3>
+            <form onsubmit="sendWhatsAppOrder(event)" class="space-y-4">
+              <div>
+                <label class="block text-xs font-semibold uppercase tracking-wider text-javaGold-300 mb-1.5" data-i18n="formName">Nama Anda</label>
+                <input type="text" id="orderName" required placeholder="Contoh: Budi Santoso"
+                  class="w-full px-4 py-3 rounded-xl bg-stone-900/80 border border-stone-600 text-white text-sm focus:outline-none focus:border-javaGold-400">
+              </div>
+
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                  <label class="block text-xs font-semibold uppercase tracking-wider text-javaGold-300 mb-1.5" data-i18n="formProduct">Pilih Produk</label>
+                  <select id="orderProduct"
+                    class="w-full px-4 py-3 rounded-xl bg-stone-900/80 border border-stone-600 text-white text-sm focus:outline-none focus:border-javaGold-400">
+                    <option value="Cobek & Ulekan Batu Alam">Cobek & Ulekan Batu Alam</option>
+                    <option value="Piring Batu Alam (Sajian Kuliner)">Piring Batu Alam (Sajian Kuliner)</option>
+                    <option value="Lesung Batu Alam Tradisional">Lesung Batu Alam Tradisional</option>
+                    <option value="Paket Grosir Restoran / Kafe">Paket Grosir Restoran / Kafe</option>
+                  </select>
+                </div>
+                <div>
+                  <label class="block text-xs font-semibold uppercase tracking-wider text-javaGold-300 mb-1.5" data-i18n="formQty">Jumlah Pesanan</label>
+                  <input type="text" id="orderQty" required placeholder="Contoh: 5 pcs / 1 kodi"
+                    class="w-full px-4 py-3 rounded-xl bg-stone-900/80 border border-stone-600 text-white text-sm focus:outline-none focus:border-javaGold-400">
+                </div>
+              </div>
+
+              <div>
+                <label class="block text-xs font-semibold uppercase tracking-wider text-javaGold-300 mb-1.5" data-i18n="formAddress">Kota / Alamat Pengiriman</label>
+                <input type="text" id="orderCity" required placeholder="Contoh: Semarang / Jakarta"
+                  class="w-full px-4 py-3 rounded-xl bg-stone-900/80 border border-stone-600 text-white text-sm focus:outline-none focus:border-javaGold-400">
+              </div>
+
+              <button type="submit"
+                class="w-full py-3.5 rounded-xl bg-gradient-to-r from-javaGold-500 to-javaGold-600 hover:from-javaGold-400 hover:to-javaGold-500 text-stone-950 font-bold text-sm tracking-wide shadow-lg transition-all flex items-center justify-center gap-2">
+                <i class="fa-brands fa-whatsapp text-lg"></i>
+                <span data-i18n="formSubmit">Kirim Pesanan ke WhatsApp</span>
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="py-8 border-t border-amber-800/20 dark:border-javaGold-500/20 text-center text-xs text-stone-600 dark:text-stone-400">
+    <div class="max-w-7xl mx-auto px-4">
+      <p class="font-royal font-bold text-sm text-emerald-950 dark:text-javaGold-400 mb-1">
+        UD AMIN BAROKAH — JEPARA
+      </p>
+      <p data-i18n="footerText">
+        © 2026 UD Amin Barokah (Siti Zunaidah). Kerajinan Cobek, Lesung & Piring Batu Alam Asli Keling, Jepara.
+      </p>
+    </div>
+  </footer>
+
+  <!-- ==================== MODAL LIGHTBOX UNTUK VIDEO & POSTER ==================== -->
+  <div id="mediaModal" class="fixed inset-0 z-50 hidden items-center justify-center bg-black/85 backdrop-blur-sm p-4">
+    <div class="relative w-full max-w-3xl bg-creamJawa dark:bg-teakCard rounded-3xl border-2 border-javaGold-500 overflow-hidden shadow-2xl">
+      <!-- Header Modal -->
+      <div class="flex items-center justify-between px-6 py-4 border-b border-amber-800/20 dark:border-javaGold-500/20">
+        <h3 id="modalTitle" class="font-serifJawa font-bold text-lg text-stone-900 dark:text-javaGold-400">Judul Media</h3>
+        <button onclick="closeModal()" class="w-9 h-9 rounded-full bg-stone-200 dark:bg-stone-800 text-stone-700 dark:text-stone-200 hover:bg-red-500 hover:text-white transition-colors flex items-center justify-center">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+
+      <!-- Konten Modal -->
+      <div id="modalBody" class="p-6 max-h-[80vh] overflow-y-auto">
+        <!-- Diisi dinamis -->
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== JAVASCRIPT INTERAKTIF ==================== -->
+  <script>
+    // 1. DATA DWIBAHASA (INDONESIA & INGGRIS)
+    const translations = {
+      id: {
+        brandSub: "Keling • Jepara • Jawa Tengah",
+        navHome: "Beranda",
+        navFeatures: "Keunggulan",
+        navVideos: "Video Showcase",
+        navPosters: "Poster & Katalog",
+        navContact: "Kontak",
+        navOrder: "Pesan WA",
+        heroBadge: "Warisan Kriya Batu Alam Jepara",
+        heroTitle1: "Keindahan Alami,",
+        heroTitle2: "Kuat, Awet & Serbaguna",
+        heroDesc: "Menghadirkan mahakarya Cobek, Lesung, dan Piring Batu Alam 100% Asli dari tangan terampil pengrajin Kelet, Keling, Jepara. Memadukan estetika klasik Jawa yang bersahaja dengan ketahanan modern untuk dapur dan sajian kuliner istimewa Anda.",
+        heroCtaWa: "Pesan Sekarang via WhatsApp",
+        heroCtaVideo: "Tonton Video Produk",
+        stat1: "Batu Alam Asli",
+        stat2: "& Eceran Siap Kirim",
+        stat3: "Kriya Asli Keling",
+        badgeTrusted: "Produk Berkualitas Terpercaya",
+        featSub: "Mengapa Memilih Kami",
+        featTitle: "Pilihan Tepat untuk Kebutuhan Kuliner & Dapur Anda",
+        f1Title: "100% Batu Alam Asli",
+        f1Desc: "Dipahat dari batu alam pilihan tanpa campuran semen atau pewarna kimia, aman untuk mengulek sambal dan menyajikan makanan panas.",
+        f2Title: "Kuat & Tahan Lama",
+        f2Desc: "Struktur batu padat yang kokoh, tidak mudah pecah maupun terkikis saat digunakan mengulek bumbu setiap hari.",
+        f3Title: "Serbaguna & Estetik",
+        f3Desc: "Cocok untuk sambal penyet, nasi goreng, sate, hingga salad modern. Menambah kesan mewah alami di meja makan maupun restoran.",
+        f4Title: "Halus & Mudah Dicuci",
+        f4Desc: "Finishing permukaan halus dengan pori-pori rapat sehingga sisa bumbu tidak mudah menempel dan sangat praktis dibersihkan.",
+        vidSub: "Dokumentasi & Demo Produk",
+        vidTitle: "Galeri Video Promosi UD Amin Barokah",
+        vidNote: "Klik pada kartu video untuk memutar pratinjau cerita & keunggulan Cobek dan Piring Batu Alam kami.",
+        posSub: "Katalog Visual & Brosur",
+        posTitle: "Poster Resmi & Produk Unggulan",
+        posDesc: "Pilih paket produk batu alam sesuai kebutuhan rumah tangga, warung makan, kafe, maupun pesanan grosir.",
+        contactBadge: "Layanan Grosir & Eceran",
+        contactTitle: "Siap Kirim ke Seluruh Indonesia",
+        contactDesc: "Dapatkan harga pengrajin langsung dari pusat kerajinan batu alam Jepara. Pengemasan aman menjamin barang sampai dengan utuh.",
+        ownerLabel: "Pengelola: Ibu Siti Zunaidah",
+        addrTitle: "Alamat Workshop",
+        formTitle: "Formulir Pemesanan Cepat",
+        formName: "Nama Anda",
+        formProduct: "Pilih Produk",
+        formQty: "Jumlah Pesanan",
+        formAddress: "Kota / Alamat Pengiriman",
+        formSubmit: "Kirim Pesanan ke WhatsApp",
+        footerText: "© 2026 UD Amin Barokah (Siti Zunaidah). Kerajinan Cobek, Lesung & Piring Batu Alam Asli Keling, Jepara.",
+        watchStory: "Putar Pratinjau & Narasi",
+        viewPoster: "Lihat Detail Poster",
+        orderThis: "Pesan Produk Ini"
+      },
+      en: {
+        brandSub: "Keling • Jepara • Central Java",
+        navHome: "Home",
+        navFeatures: "Advantages",
+        navVideos: "Video Showcase",
+        navPosters: "Posters & Catalog",
+        navContact: "Contact",
+        navOrder: "Order WA",
+        heroBadge: "Jepara Natural Stone Craft Heritage",
+        heroTitle1: "Natural Elegance,",
+        heroTitle2: "Strong, Durable & Versatile",
+        heroDesc: "Presenting 100% Authentic Natural Stone Mortars, Pestles, and Dining Plates handcrafted by skilled artisans in Kelet, Keling, Jepara. Blending classic Javanese aesthetics with modern durability for your kitchen and culinary dining.",
+        heroCtaWa: "Order Now via WhatsApp",
+        heroCtaVideo: "Watch Product Videos",
+        stat1: "Authentic Stone",
+        stat2: "Wholesale & Retail",
+        stat3: "Jepara Craftsmanship",
+        badgeTrusted: "Trusted Quality Products",
+        featSub: "Why Choose Us",
+        featTitle: "The Right Choice for Your Culinary & Kitchen Needs",
+        f1Title: "100% Natural Stone",
+        f1Desc: "Carved from selected natural stone without cement or chemical dyes, safe for grinding spices and serving hot dishes.",
+        f2Title: "Strong & Long-Lasting",
+        f2Desc: "Dense, sturdy stone structure that resists cracking or wearing down even with daily culinary use.",
+        f3Title: "Versatile & Aesthetic",
+        f3Desc: "Ideal for traditional sambal, fried rice, satay, to modern salads. Elevates dining tables and restaurant presentations.",
+        f4Title: "Smooth & Easy to Clean",
+        f4Desc: "Finely finished surface with tight pores so food residue doesn't stick and washing becomes effortless.",
+        vidSub: "Product Demos & Stories",
+        vidTitle: "UD Amin Barokah Promotional Videos",
+        vidNote: "Click on any video card to play the visual showcase and narration of our Natural Stone Mortars and Plates.",
+        posSub: "Visual Catalog & Brochures",
+        posTitle: "Official Posters & Featured Products",
+        posDesc: "Select natural stone packages tailored for households, restaurants, cafes, or wholesale orders.",
+        contactBadge: "Wholesale & Retail Service",
+        contactTitle: "Ready to Ship Nationwide",
+        contactDesc: "Get direct artisan prices from Jepara's natural stone craft center. Secure packaging ensures safe delivery.",
+        ownerLabel: "Manager: Mrs. Siti Zunaidah",
+        addrTitle: "Workshop Address",
+        formTitle: "Quick Order Form",
+        formName: "Your Name",
+        formProduct: "Select Product",
+        formQty: "Order Quantity",
+        formAddress: "Destination City / Address",
+        formSubmit: "Send Order via WhatsApp",
+        footerText: "© 2026 UD Amin Barokah (Siti Zunaidah). Authentic Natural Stone Mortars & Plates from Keling, Jepara.",
+        watchStory: "Play Preview & Narration",
+        viewPoster: "Inspect Poster Details",
+        orderThis: "Order This Product"
+      }
+    };
+
+    // 2. DATA 4 VIDEO PROMOSI (Mewakili 4 video yang diunggah pengguna)
+    const videoItems = [
+      {
+        id: "vid1",
+        duration: "0:09",
+        titleId: "Cobek Batu Alami Super Lezat",
+        titleEn: "Authentic Stone Mortar for Delicious Sambal",
+        descId: "Mau bikin sambal yang super lezat? Pakai cobek batu alami dari UD Amin Barokah—kuat, awet, dan serbaguna!",
+        descEn: "Want to make super delicious sambal? Use natural stone mortars from UD Amin Barokah—strong, durable, and versatile!",
+        scenesId: [
+          "00:00 — Menyiapkan cabai merah, bawang putih, bawang merah & jeruk nipis di atas cobek batu.",
+          "00:02 — Mengulek bumbu dengan ulekan batu alam padat tanpa rontok pasir.",
+          "00:05 — Sambal siap dinikmati dengan lalapan segar, nikmat dan mantap!",
+          "00:08 — Stok melimpah di galeri UD Amin Barokah, Kelet Keling Jepara."
+        ],
+        scenesEn: [
+          "00:00 — Preparing fresh chilies, garlic, shallots & lime on the natural stone mortar.",
+          "00:02 — Grinding spices effortlessly with solid natural stone pestle.",
+          "00:05 — Fresh sambal ready to enjoy with crisp vegetables!",
+          "00:08 — Abundant stock available at UD Amin Barokah gallery, Keling Jepara."
+        ],
+        accent: "from-emerald-900 to-stone-900",
+        icon: "fa-mortar-pestle"
+      },
+      {
+        id: "vid2",
+        duration: "0:09",
+        titleId: "Piring Batu Alam Mudah Dicuci",
+        titleEn: "Easy-to-Clean Natural Stone Dining Plates",
+        descId: "100% Batu Alam Asli, cocok untuk sajian kuliner ayam penyet sambal pedas serta mudah dibersihkan & tahan lama.",
+        descEn: "100% Authentic Natural Stone, perfect for crispy chicken & spicy sambal dishes, easy to wash & long-lasting.",
+        scenesId: [
+          "00:00 — Tumpukan piring batu alam bertekstur granit elegan di meja kayu.",
+          "00:03 — Sajian kuliner ayam goreng renyah & sambal segar di atas piring batu.",
+          "00:04 — Dibilas air mengalir dengan sangat mudah tanpa meninggalkan noda minyak.",
+          "00:07 — Melayani pesanan grosir dan eceran sepenuh hati."
+        ],
+        scenesEn: [
+          "00:00 — Stacked granite-textured natural stone plates on a wooden table.",
+          "00:03 — Crispy fried chicken & fresh sambal served on the stone plate.",
+          "00:04 — Rinsed cleanly under running water with zero oil stains.",
+          "00:07 — Serving wholesale and retail orders wholeheartedly."
+        ],
+        accent: "from-amber-900 to-stone-900",
+        icon: "fa-droplet"
+      },
+      {
+        id: "vid3",
+        duration: "0:09",
+        titleId: "Keindahan Alami di Meja Makan",
+        titleEn: "Natural Beauty on Your Dining Table",
+        descId: "Cocok untuk berbagai hidangan: dari sambal, sate hangat, nasi goreng spesial, hingga salad segar bergaya restoran.",
+        descEn: "Suitable for all cuisines: from sambal, sizzling satay, special fried rice, to fresh restaurant-style salads.",
+        scenesId: [
+          "00:01 — Hidangan sambal lalapan segar tampil menggugah selera.",
+          "00:03 — Sate daging hangat mengepul disajikan di atas piring batu alami.",
+          "00:05 — Nasi goreng telur mata sapi & salad sayur tampil lebih istimewa.",
+          "00:08 — UD Amin Barokah Piring Batu Alam — Pesan sekarang juga!"
+        ],
+        scenesEn: [
+          "00:01 — Fresh sambal and vegetables presented appetizingly.",
+          "00:03 — Steaming hot skewers served on natural stone plates.",
+          "00:05 — Sunny-side-up fried rice & fresh salad look extraordinary.",
+          "00:08 — UD Amin Barokah Natural Stone Plates — Order yours today!"
+        ],
+        accent: "from-stone-800 to-emerald-950",
+        icon: "fa-plate-wheat"
+      },
+      {
+        id: "vid4",
+        duration: "0:09",
+        titleId: "Pilihan Terbaik Peralatan Makan",
+        titleEn: "The Best Choice for Tableware",
+        descId: "Hadirkan pilihan terbaik untuk kebutuhan peralatan makan Anda. Piring batu alam kuat, awet, dan serbaguna.",
+        descEn: "Bring the finest choice for your tableware needs. Strong, durable, and versatile natural stone plates.",
+        scenesId: [
+          "00:00 — Detail tekstur bintik kristal alami batu alam pilihan.",
+          "00:03 — Ketebalan presisi dan tepian rapi hasil pahatan pengrajin Jepara.",
+          "00:06 — Tumpukan berbagai ukuran piring batu alam siap kirim.",
+          "00:08 — Kualitas terbaik, harga bersahabat untuk keluarga dan usaha kuliner."
+        ],
+        scenesEn: [
+          "00:00 — Close-up detail of natural crystalline stone speckles.",
+          "00:03 — Precision thickness and smooth edges by Jepara artisans.",
+          "00:06 — Multiple sizes of natural stone plates stacked and ready to ship.",
+          "00:08 — Top quality, friendly prices for families and culinary businesses."
+        ],
+        accent: "from-yellow-900 to-stone-950",
+        icon: "fa-layer-group"
+      }
+    ];
+
+    // 3. DATA 4 POSTER & KATALOG (Mewakili 4 poster/gambar produk yang diunggah pengguna)
+    const posterItems = [
+      {
+        id: "pos1",
+        badgeId: "Poster Utama Lesung & Cobek",
+        badgeEn: "Main Mortar & Bowl Poster",
+        titleId: "Lesung & Cobek Batu Alam",
+        titleEn: "Natural Stone Mortar & Bowl",
+        pointsId: ["Bahan Batu Alam Berkualitas", "Kuat & Tahan Lama", "Halus & Mudah Dibersihkan", "Model Lengkap & Harga Terjangkau"],
+        pointsEn: ["Quality Natural Stone Material", "Strong & Long-Lasting", "Smooth & Easy to Clean", "Complete Models & Affordable Prices"],
+        waText: "Halo UD Amin Barokah, saya tertarik memesan Lesung / Cobek Batu Alam sesuai poster katalog."
+      },
+      {
+        id: "pos2",
+        badgeId: "Storyboard 6 Langkah Unggulan",
+        badgeEn: "6-Step Feature Storyboard",
+        titleId: "Panduan Lengkap Piring Batu",
+        titleEn: "Complete Stone Plate Guide",
+        pointsId: ["1. Solusi Piring Alami", "2. Bernilai Ekonomis", "3. Cocok Nasi Goreng, Salad, Sambal, Sate", "4. Desain Elegan & Natural"],
+        pointsEn: ["1. Natural Dining Solution", "2. Economical Value", "3. Ideal for Fried Rice, Salad, Sambal, Satay", "4. Elegant & Natural Design"],
+        waText: "Halo UD Amin Barokah, saya ingin tanya daftar harga Piring Batu Alam untuk hidangan kuliner."
+      },
+      {
+        id: "pos3",
+        badgeId: "Banner Promosi Piring Batu",
+        badgeEn: "Stone Plate Promo Banner",
+        titleId: "Paket Piring Batu Serbaguna",
+        titleEn: "Versatile Stone Plate Set",
+        pointsId: ["Kualitas Terbaik Teruji", "Harga Bersahabat Langsung Pengrajin", "Melayani dengan Sepenuh Hati", "Siap Kirim Partai Besar & Kecil"],
+        pointsEn: ["Tested Top Quality", "Direct Artisan Friendly Prices", "Wholehearted Customer Service", "Ready for Bulk & Small Orders"],
+        waText: "Halo UD Amin Barokah, saya ingin memesan Paket Piring Batu Alam Serbaguna."
+      },
+      {
+        id: "pos4",
+        badgeId: "Lencana Resmi Toko",
+        badgeEn: "Official Store Emblem",
+        titleId: "Identitas Resmi UD Amin Barokah",
+        titleEn: "Official UD Amin Barokah Seal",
+        pointsId: ["Pemilik: Siti Zunaidah", "WhatsApp: +62 856-1717-276", "Lokasi: Kelet RT 26 RW 04, Keling, Jepara", "Pilihannya Tepat, Kepuasannya Pasti!"],
+        pointsEn: ["Owner: Siti Zunaidah", "WhatsApp: +62 856-1717-276", "Location: Kelet RT 26 RW 04, Keling, Jepara", "The Right Choice, Guaranteed Satisfaction!"],
+        waText: "Halo Ibu Siti Zunaidah (UD Amin Barokah), saya ingin bermitra / memesan produk batu alam."
+      }
+    ];
+
+    let currentLang = 'id';
+    let isDark = false;
+    let activeSlideTimer = null;
+
+    // 4. FUNGSI RENDER VIDEO & POSTER
+    function renderMediaGrids() {
+      const t = translations[currentLang];
+      const videoGrid = document.getElementById('videoGrid');
+      const posterGrid = document.getElementById('posterGrid');
+
+      // Render Kartu Video
+      videoGrid.innerHTML = videoItems.map((v, idx) => `
+        <div onclick="openVideoModal(${idx})" class="group cursor-pointer rounded-2xl overflow-hidden bg-white dark:bg-teakCard border border-amber-800/20 dark:border-javaGold-500/25 shadow-md hover:shadow-xl hover:-translate-y-1 transition-all flex flex-col">
+          <!-- Thumbnail Video Interaktif -->
+          <div class="relative h-56 bg-gradient-to-br ${v.accent} p-5 flex flex-col justify-between overflow-hidden">
+            <div class="flex items-center justify-between z-10">
+              <span class="px-2.5 py-1 rounded-md bg-black/50 backdrop-blur-sm text-javaGold-300 text-[11px] font-bold">
+                VIDEO #0${idx + 1}
+              </span>
+              <span class="px-2 py-0.5 rounded bg-black/60 text-white text-[11px] font-mono">
+                ${v.duration}
+              </span>
+            </div>
+
+            <!-- Tombol Play Tengah -->
+            <div class="my-auto mx-auto w-14 h-14 rounded-full bg-javaGold-500 text-stone-950 flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform z-10">
+              <i class="fa-solid fa-play text-lg ml-0.5"></i>
+            </div>
+
+            <!-- Subtitel Bawah Video -->
+            <div class="z-10">
+              <p class="text-white font-serifJawa font-bold text-base leading-snug drop-shadow">
+                ${currentLang === 'id' ? v.titleId : v.titleEn}
+              </p>
+            </div>
+
+            <!-- Ikon Dekoratif Latar -->
+            <i class="fa-solid ${v.icon} absolute -right-4 -bottom-4 text-8xl text-white/10 group-hover:rotate-12 transition-transform"></i>
+          </div>
+
+          <!-- Deskripsi Video -->
+          <div class="p-5 flex-1 flex flex-col justify-between">
+            <p class="text-xs text-stone-600 dark:text-stone-300 leading-relaxed mb-4">
+              "${currentLang === 'id' ? v.descId : v.descEn}"
+            </p>
+            <div class="text-xs font-bold text-emerald-800 dark:text-javaGold-400 flex items-center gap-1.5 group-hover:gap-2.5 transition-all">
+              <span>${t.watchStory}</span>
+              <i class="fa-solid fa-arrow-right"></i>
+            </div>
+          </div>
+        </div>
+      `).join('');
+
+      // Render Kartu Poster
+      posterGrid.innerHTML = posterItems.map((p, idx) => `
+        <div class="rounded-2xl overflow-hidden bg-creamJawa dark:bg-teakDark border-2 border-amber-700/25 dark:border-javaGold-500/30 shadow-md hover:shadow-xl transition-all flex flex-col">
+          <!-- Header Poster Bergaya Klasik Jawa-Hijau-Emas -->
+          <div class="bg-gradient-to-r from-emerald-950 via-emerald-900 to-stone-900 p-4 text-center border-b-2 border-javaGold-500">
+            <span class="inline-block px-2.5 py-0.5 rounded-full bg-javaGold-500/20 text-javaGold-300 text-[10px] font-bold uppercase tracking-wider mb-1">
+              ${currentLang === 'id' ? p.badgeId : p.badgeEn}
+            </span>
+            <h3 class="font-royal font-bold text-javaGold-400 text-sm tracking-wide">
+              UD AMIN BAROKAH
+            </h3>
+          </div>
+
+          <!-- Visual Ilustrasi Poster -->
+          <div class="p-5 flex-1 flex flex-col justify-between">
+            <div>
+              <h4 class="font-serifJawa font-bold text-lg text-stone-900 dark:text-white mb-3">
+                ${currentLang === 'id' ? p.titleId : p.titleEn}
+              </h4>
+              <ul class="space-y-2 mb-5">
+                ${(currentLang === 'id' ? p.pointsId : p.pointsEn).map(pt => `
+                  <li class="flex items-start gap-2 text-xs text-stone-700 dark:text-stone-300">
+                    <i class="fa-solid fa-circle-check text-emerald-600 dark:text-javaGold-400 mt-0.5"></i>
+                    <span>${pt}</span>
+                  </li>
+                `).join('')}
+              </ul>
+            </div>
+
+            <div class="space-y-2 pt-3 border-t border-amber-800/15 dark:border-javaGold-500/15">
+              <button onclick="openPosterModal(${idx})"
+                class="w-full py-2.5 rounded-xl border border-amber-800/30 dark:border-javaGold-500/40 text-xs font-bold text-stone-800 dark:text-javaGold-300 hover:bg-javaGold-500/10 transition-colors">
+                <i class="fa-solid fa-magnifying-glass-plus mr-1"></i> ${t.viewPoster}
+              </button>
+              <a href="https://wa.me/628561717276?text=${encodeURIComponent(p.waText)}" target="_blank"
+                class="w-full py-2.5 rounded-xl bg-emerald-800 dark:bg-javaGold-500 text-white dark:text-stone-950 text-xs font-bold flex items-center justify-center gap-1.5 hover:opacity-95 transition-opacity">
+                <i class="fa-brands fa-whatsapp"></i> ${t.orderThis}
+              </a>
+            </div>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    // 5. MODAL PEMUTAR SIMULASI VIDEO & UNGGAH VIDEO LOKAL
+    function openVideoModal(index) {
+      const v = videoItems[index];
+      const modal = document.getElementById('mediaModal');
+      const modalTitle = document.getElementById('modalTitle');
+      const modalBody = document.getElementById('modalBody');
+
+      modalTitle.textContent = currentLang === 'id' ? v.titleId : v.titleEn;
+      const scenes = currentLang === 'id' ? v.scenesId : v.scenesEn;
+
+      modalBody.innerHTML = `
+        <div class="space-y-5">
+          <!-- Layar Pemutar Visual Animasi / Video -->
+          <div id="playerScreen" class="relative rounded-2xl overflow-hidden bg-gradient-to-br ${v.accent} aspect-video flex flex-col items-center justify-center p-6 text-center border border-javaGold-500/40 shadow-inner">
+            <div class="w-16 h-16 rounded-full bg-javaGold-500/20 border border-javaGold-400 flex items-center justify-center text-javaGold-300 text-2xl mb-4 animate-pulse">
+              <i class="fa-solid ${v.icon}"></i>
+            </div>
+            <p id="activeSceneText" class="font-serifJawa text-lg sm:text-2xl text-white font-bold max-w-xl leading-relaxed">
+              ${scenes[0]}
+            </p>
+            <div class="mt-4 flex items-center gap-2">
+              ${scenes.map((_, i) => `<span id="dot-${i}" class="w-2.5 h-2.5 rounded-full ${i === 0 ? 'bg-javaGold-400 w-6' : 'bg-white/30'} transition-all"></span>`).join('')}
+            </div>
+          </div>
+
+          <!-- Daftar Timeline Adegan -->
+          <div class="bg-stone-100 dark:bg-stone-900/70 rounded-2xl p-4 space-y-2">
+            <p class="text-xs font-bold uppercase tracking-wider text-amber-800 dark:text-javaGold-400 mb-2">
+              ${currentLang === 'id' ? 'Alur Cerita Video (00:00 - 00:09):' : 'Video Storyboard Timeline (00:00 - 00:09):'}
+            </p>
+            ${scenes.map((sc, i) => `
+              <button onclick="setScene(${index}, ${i})" class="w-full text-left text-xs p-2.5 rounded-xl hover:bg-javaGold-500/15 text-stone-700 dark:text-stone-300 transition-colors flex items-center gap-2">
+                <i class="fa-solid fa-play text-[10px] text-javaGold-500"></i>
+                <span>${sc}</span>
+              </button>
+            `).join('')}
+          </div>
+
+          <!-- Opsi Putar File Video MP4 Lokal dari Perangkat -->
+          <div class="flex flex-col sm:flex-row items-center justify-between gap-3 pt-2 border-t border-stone-200 dark:border-stone-700">
+            <label class="cursor-pointer inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-stone-200 dark:bg-stone-800 text-xs font-semibold hover:bg-javaGold-500/20 transition-colors">
+              <i class="fa-solid fa-upload text-javaGold-600 dark:text-javaGold-400"></i>
+              <span>${currentLang === 'id' ? 'Putar File Video MP4 dari Perangkat Anda' : 'Load Local MP4 Video File'}</span>
+              <input type="file" accept="video/*" class="hidden" onchange="loadLocalVideo(event)">
+            </label>
+
+            <a href="https://wa.me/628561717276?text=${encodeURIComponent('Halo UD Amin Barokah, saya tertarik setelah menonton video: ' + v.titleId)}" target="_blank"
+              class="w-full sm:w-auto px-5 py-2.5 rounded-xl bg-emerald-700 text-white text-xs font-bold text-center hover:bg-emerald-600 transition-colors">
+              <i class="fa-brands fa-whatsapp mr-1"></i> ${currentLang === 'id' ? 'Pesan Produk di Video Ini' : 'Order Featured Product'}
+            </a>
+          </div>
+        </div>
+      `;
+
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+
+      // Jalankan rotasi adegan otomatis setiap 2.5 detik
+      let step = 0;
+      clearInterval(activeSlideTimer);
+      activeSlideTimer = setInterval(() => {
+        step = (step + 1) % scenes.length;
+        setScene(index, step);
+      }, 2500);
+    }
+
+    function setScene(videoIdx, sceneIdx) {
+      const v = videoItems[videoIdx];
+      const scenes = currentLang === 'id' ? v.scenesId : v.scenesEn;
+      const textEl = document.getElementById('activeSceneText');
+      if (textEl) {
+        textEl.textContent = scenes[sceneIdx];
+        scenes.forEach((_, i) => {
+          const dot = document.getElementById(`dot-${i}`);
+          if (dot) {
+            dot.className = `h-2.5 rounded-full transition-all ${i === sceneIdx ? 'bg-javaGold-400 w-6' : 'bg-white/30 w-2.5'}`;
+          }
+        });
+      }
+    }
+
+    function loadLocalVideo(event) {
+      const file = event.target.files[0];
+      if (!file) return;
+      clearInterval(activeSlideTimer);
+      const url = URL.createObjectURL(file);
+      const screen = document.getElementById('playerScreen');
+      screen.innerHTML = `<video src="${url}" controls autoplay class="w-full h-full object-contain rounded-xl"></video>`;
+    }
+
+    // 6. MODAL DETAIL POSTER
+    function openPosterModal(index) {
+      const p = posterItems[index];
+      const modal = document.getElementById('mediaModal');
+      const modalTitle = document.getElementById('modalTitle');
+      const modalBody = document.getElementById('modalBody');
+
+      modalTitle.textContent = currentLang === 'id' ? p.titleId : p.titleEn;
+      const points = currentLang === 'id' ? p.pointsId : p.pointsEn;
+
+      modalBody.innerHTML = `
+        <div class="rounded-2xl bg-gradient-to-b from-emerald-950 via-emerald-900 to-stone-950 p-6 sm:p-8 text-center border-2 border-javaGold-500 text-white space-y-5">
+          <div class="inline-block px-4 py-1 rounded-full bg-javaGold-500 text-stone-950 font-bold text-xs uppercase tracking-widest">
+            ${currentLang === 'id' ? p.badgeId : p.badgeEn}
+          </div>
+          <h2 class="font-royal text-2xl sm:text-3xl font-bold text-javaGold-400">
+            UD AMIN BAROKAH
+          </h2>
+          <p class="font-serifJawa italic text-amber-200 text-lg">
+            "Kuat, Awet & Serbaguna — Pilihannya Tepat, Kepuasannya Pasti!"
+          </p>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-left max-w-xl mx-auto pt-2">
+            ${points.map(pt => `
+              <div class="p-3 rounded-xl bg-white/10 border border-javaGold-500/30 flex items-center gap-2.5 text-sm">
+                <i class="fa-solid fa-check-circle text-javaGold-400"></i>
+                <span>${pt}</span>
+              </div>
+            `).join('')}
+          </div>
+
+          <div class="pt-4 border-t border-javaGold-500/30 flex flex-col sm:flex-row items-center justify-center gap-4 text-sm">
+            <div class="px-4 py-2 rounded-xl bg-emerald-800/80 border border-emerald-400/30 font-bold">
+              <i class="fa-brands fa-whatsapp text-emerald-300 mr-1.5"></i> +62 856-1717-276 (Siti Zunaidah)
+            </div>
+            <div class="px-4 py-2 rounded-xl bg-white/10 text-amber-100">
+              <i class="fa-solid fa-location-dot text-red-400 mr-1.5"></i> Kelet RT 26 RW 04, Keling, Jepara
+            </div>
+          </div>
+
+          <div class="pt-2">
+            <a href="https://wa.me/628561717276?text=${encodeURIComponent(p.waText)}" target="_blank"
+              class="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-javaGold-500 text-stone-950 font-bold text-sm hover:bg-javaGold-400 transition-colors">
+              <i class="fa-brands fa-whatsapp text-lg"></i>
+              <span>${currentLang === 'id' ? 'Hubungi & Pesan Sekarang' : 'Contact & Order Now'}</span>
+            </a>
+          </div>
+        </div>
+      `;
+
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+    }
+
+    function closeModal() {
+      clearInterval(activeSlideTimer);
+      const modal = document.getElementById('mediaModal');
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+    }
+
+    // 7. TOGGLE TEMA GELAP / TERANG
+    function toggleTheme() {
+      isDark = !isDark;
+      const html = document.documentElement;
+      const icon = document.getElementById('themeIcon');
+      if (isDark) {
+        html.classList.add('dark');
+        icon.classList.remove('fa-moon');
+        icon.classList.add('fa-sun');
+      } else {
+        html.classList.remove('dark');
+        icon.classList.remove('fa-sun');
+        icon.classList.add('fa-moon');
+      }
+    }
+
+    // 8. TOGGLE BAHASA INDONESIA / INGGRIS
+    function toggleLanguage() {
+      currentLang = currentLang === 'id' ? 'en' : 'id';
+      document.getElementById('langLabel').textContent = currentLang.toUpperCase();
+
+      const t = translations[currentLang];
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        if (t[key]) {
+          el.textContent = t[key];
+        }
+      });
+
+      renderMediaGrids();
+    }
+
+    // 9. KIRIM FORMULIR KE WHATSAPP
+    function sendWhatsAppOrder(e) {
+      e.preventDefault();
+      const name = document.getElementById('orderName').value;
+      const product = document.getElementById('orderProduct').value;
+      const qty = document.getElementById('orderQty').value;
+      const city = document.getElementById('orderCity').value;
+
+      const message = currentLang === 'id'
+        ? `Halo UD Amin Barokah (Ibu Siti Zunaidah),\nSaya ingin memesan produk batu alam:\n• Nama: ${name}\n• Produk: ${product}\n• Jumlah: ${qty}\n• Tujuan Kirim: ${city}\nMohon info total harga & ongkirnya. Terima kasih.`
+        : `Hello UD Amin Barokah (Mrs. Siti Zunaidah),\nI would like to order natural stone products:\n• Name: ${name}\n• Product: ${product}\n• Quantity: ${qty}\n• Shipping City: ${city}\nPlease let me know the total price & shipping cost. Thank you.`;
+
+      window.open(`https://wa.me/628561717276?text=${encodeURIComponent(message)}`, '_blank');
+    }
+
+    // Tutup modal saat klik area luar
+    document.getElementById('mediaModal').addEventListener('click', function(e) {
+      if (e.target === this) closeModal();
+    });
+
+    // Inisialisasi saat halaman dimuat
+    window.addEventListener('DOMContentLoaded', () => {
+      renderMediaGrids();
+    });
+  </script>
+</body>
+</html>
